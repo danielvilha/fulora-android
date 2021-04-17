@@ -1,8 +1,15 @@
 package com.fulora.app.source.local
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fulora.app.model.Plant
+import com.fulora.app.model.PlantingArea
+import com.fulora.app.model.User
+import com.fulora.app.source.local.dao.PlantDao
+import com.fulora.app.source.local.dao.PlantingAreaDao
+import com.fulora.app.source.local.dao.UserDao
 
 /**
  * Created by danielvilha on 17/04/21
@@ -14,13 +21,15 @@ import com.fulora.app.model.Plant
  * This pattern is pretty much the same for any database,
  * so you can reuse it.
  */
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(entities = [Plant::class, PlantingArea::class, User::class], version = 1, exportSchema = false)
 abstract class FuloraDatabase: RoomDatabase() {
 
     /**
      * Connects the database to the DAO.
      */
-    abstract val fuloraDatabaseDao: FuloraDatabaseDao
+    abstract val plantDao: PlantDao
+    abstract val plantingAreaDao: PlantingAreaDao
+    abstract val userDao: UserDao
 
     /**
      * Define a companion object, this allows us to add functions on the FuloraDatabase class.
@@ -58,35 +67,35 @@ abstract class FuloraDatabase: RoomDatabase() {
          *
          * @param context The application context Singleton, used to get access to the filesystem.
          */
-//        fun getInstance(context: Context): FuloraDatabase {
-//            // Multiple threads can ask for the database at the same time, ensure we only initialize
-//            // it once by using synchronized. Only one thread may enter a synchronized block at a
-//            // time.
-//            synchronized(this) {
-//                // Copy the current value of INSTANCE to a local variable so Kotlin can smart cast.
-//                // Smart cast is only available to local variables.
-//                var instance = INSTANCE
-//                // If instance is `null` make a new database instance.
-//                if (instance == null) {
-//                    instance = Room.databaseBuilder(
-//                        context.applicationContext,
-//                        FuloraDatabase::class.java,
-//                        "fulora_database"
-//                    )
-//                        // Wipes and rebuilds instead of migrating if no Migration object.
-//                        // Migration is not part of this lesson. You can learn more about
-//                        // migration with Room in this blog post:
-//                        // https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
-//                        .fallbackToDestructiveMigration()
-//                        .build()
-//
-//                    // Assign INSTANCE to the newly created database.
-//                    INSTANCE = instance
-//                }
-//
-//                // Return instance; smart cast to be non-null.
-//                return instance
-//            }
-//        }
+        fun getInstance(context: Context): FuloraDatabase {
+            // Multiple threads can ask for the database at the same time, ensure we only initialize
+            // it once by using synchronized. Only one thread may enter a synchronized block at a
+            // time.
+            synchronized(this) {
+                // Copy the current value of INSTANCE to a local variable so Kotlin can smart cast.
+                // Smart cast is only available to local variables.
+                var instance = INSTANCE
+                // If instance is `null` make a new database instance.
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        FuloraDatabase::class.java,
+                        "fulora_database"
+                    )
+                        // Wipes and rebuilds instead of migrating if no Migration object.
+                        // Migration is not part of this lesson. You can learn more about
+                        // migration with Room in this blog post:
+                        // https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
+                        .fallbackToDestructiveMigration()
+                        .build()
+
+                    // Assign INSTANCE to the newly created database.
+                    INSTANCE = instance
+                }
+
+                // Return instance; smart cast to be non-null.
+                return instance
+            }
+        }
     }
 }

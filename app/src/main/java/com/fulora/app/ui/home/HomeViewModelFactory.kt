@@ -3,7 +3,7 @@ package com.fulora.app.ui.home
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.fulora.app.source.local.FuloraDatabaseDao
+import com.fulora.app.source.local.dao.PlantDao
 
 /**
  * Created by danielvilha on 17/04/21
@@ -15,7 +15,7 @@ import com.fulora.app.source.local.FuloraDatabaseDao
  */
 @Suppress("UNCHECKED_CAST")
 class HomeViewModelFactory(
-    private val dataSource: FuloraDatabaseDao,
+    private val dataSource: PlantDao,
     private val application: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
