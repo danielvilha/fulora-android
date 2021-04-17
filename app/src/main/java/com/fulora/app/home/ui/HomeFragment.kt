@@ -1,14 +1,13 @@
-package com.fulora.app.ui.home
+package com.fulora.app.home.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.fulora.app.R
 import com.fulora.app.databinding.FragmentHomeBinding
-import com.fulora.app.source.local.FuloraDatabase
 
 /**
  * A [Fragment] subclass.
