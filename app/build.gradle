@@ -52,6 +52,8 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$version_room"
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
 
     // AppCompact
     implementation "androidx.appcompat:appcompat:$version_appcompact"
