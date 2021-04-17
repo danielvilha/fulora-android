@@ -1,4 +1,4 @@
-package com.fulora.app.database
+package com.fulora.app.source.local
 
 import androidx.room.Dao
 

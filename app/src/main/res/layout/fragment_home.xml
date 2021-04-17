@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.fulora.app.home.HomeViewModel" />
+            type="com.fulora.app.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.fulora.app.home.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <TextView
             android:id="@+id/textView"

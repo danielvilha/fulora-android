@@ -1,4 +1,4 @@
-package com.fulora.app.home
+package com.fulora.app.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import com.fulora.app.R
-import com.fulora.app.database.FuloraDatabase
 import com.fulora.app.databinding.FragmentHomeBinding
+import com.fulora.app.source.local.FuloraDatabase
 
 /**
  * A [Fragment] subclass.
@@ -31,9 +30,9 @@ class HomeFragment : Fragment() {
         // Get a reference to the binding object and inflate the fragment views.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
-//        val application = requireNotNull(this.activity).application
-//
-//        // I created this instance of the ViewModel Factory.
+        val application = requireNotNull(this.activity).application
+
+        // I created this instance of the ViewModel Factory.
 //        val dataSource = FuloraDatabase.getInstance(application).fuloraDatabaseDao
 //        val viewModelFactory = HomeViewModelFactory(dataSource, application)
 //
