@@ -1,10 +1,8 @@
 package com.fulora.app.source.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.fulora.app.model.Fulora
+import com.fulora.app.model.Plant
 
 /**
  * Created by danielvilha on 17/04/21
@@ -16,7 +14,7 @@ import com.fulora.app.model.Fulora
  * This pattern is pretty much the same for any database,
  * so you can reuse it.
  */
-@Database(entities = [Fulora::class], version = 1, exportSchema = false)
+@Database(entities = [Plant::class], version = 1, exportSchema = false)
 abstract class FuloraDatabase: RoomDatabase() {
 
     /**
