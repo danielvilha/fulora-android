@@ -1,4 +1,4 @@
-package com.fulora.app.database
+package com.fulora.app.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
