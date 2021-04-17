@@ -1,4 +1,4 @@
-package com.fulora.app.ui.home
+package com.fulora.app.home.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

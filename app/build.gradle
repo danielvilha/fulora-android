@@ -60,7 +60,6 @@ dependencies {
 
     // Material
     implementation "com.google.android.material:material:$version_material"
-    implementation "androidx.legacy:legacy-support-v4:$version_legacy_support"
     implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation_fragment"
     implementation "androidx.navigation:navigation-ui-ktx:$version_navigation_ui"
 
