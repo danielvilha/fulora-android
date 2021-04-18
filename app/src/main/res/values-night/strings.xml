@@ -2,4 +2,10 @@
 <resources>
     <string name="pular">Pular</string>
     <string name="proximo">Próximo</string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="ou">OU</string>
+    <string name="facebook">Facebook</string>
 </resources>

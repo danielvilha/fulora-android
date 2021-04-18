@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.fulora.app.R
 import com.fulora.app.databinding.ActivityOnboardingBinding
 import com.fulora.app.onboarding.adapter.OnboardingViewPagerAdapter
+import com.fulora.app.sign_in.SignInActivity
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -45,7 +46,8 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun goToLogin() {
-        //TODO: fazer o login
+        startActivity(SignInActivity.createIntent(this))
+        finish()
     }
 
     companion object {
