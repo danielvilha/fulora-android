@@ -12,4 +12,5 @@
     <string name="onboarding_step_three_subtitle">É só cadastrar o melhor horário para ser sempre lembrado</string>
     <string name="voltar">Voltar</string>
     <string name="comecar">Começar</string>
+    <string name="empty_text_plantation">Você não tem nada cadastrado ainda. Que tal adicionar?</string>
 </resources>

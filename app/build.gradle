@@ -52,13 +52,14 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$version_room"
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
 
     // AppCompact
     implementation "androidx.appcompat:appcompat:$version_appcompact"
 
     // Material
     implementation "com.google.android.material:material:$version_material"
-    implementation "androidx.legacy:legacy-support-v4:$version_legacy_support"
     implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation_fragment"
     implementation "androidx.navigation:navigation-ui-ktx:$version_navigation_ui"
 
@@ -76,6 +77,8 @@ dependencies {
 
     // Test
     testImplementation 'junit:junit:4.13.2'
+    testImplementation "com.google.truth:truth:1.1.2"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "com.google.truth:truth:1.1.2"
 }
