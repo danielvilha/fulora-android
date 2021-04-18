@@ -2,7 +2,7 @@ package com.fulora.app.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.fulora.app.repositories.PlantingAreaRepository
+import com.fulora.app.home.use_case.PlantingAreaUseCase
 
 /**
  * Created by danielvilha on 17/04/21
@@ -14,11 +14,11 @@ import com.fulora.app.repositories.PlantingAreaRepository
  */
 @Suppress("UNCHECKED_CAST")
 class HomeViewModelFactory(
-    private val plantingAreaRepository: PlantingAreaRepository
+    private val plantingUseCase: PlantingAreaUseCase
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            return HomeViewModel(plantingAreaRepository) as T
+            return HomeViewModel(plantingUseCase) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

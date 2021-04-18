@@ -3,6 +3,7 @@ package com.fulora.app.di
 import android.content.Context
 import com.fulora.app.home.ui.HomeViewModel
 import com.fulora.app.home.ui.HomeViewModelFactory
+import com.fulora.app.home.use_case.PlantingAreaUseCase
 import com.fulora.app.repositories.PlantRepository
 import com.fulora.app.repositories.PlantingAreaRepository
 import com.fulora.app.repositories.UserRepository
@@ -26,6 +27,10 @@ object Injector {
     }
 
     fun provideHomeViewModel(context: Context): HomeViewModel {
-        return HomeViewModelFactory(providePlantingAreaRepository(context)).create(HomeViewModel::class.java)
+        return HomeViewModelFactory(providePlantingAreaUseCase(context)).create(HomeViewModel::class.java)
+    }
+
+    fun providePlantingAreaUseCase(context: Context) : PlantingAreaUseCase  {
+        return PlantingAreaUseCase(providePlantingAreaRepository(context))
     }
 }
