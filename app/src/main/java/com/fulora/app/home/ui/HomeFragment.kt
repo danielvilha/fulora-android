@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.fulora.app.R
 import com.fulora.app.databinding.FragmentHomeBinding
+import com.fulora.app.di.Injector
 
 /**
  * A [Fragment] subclass.
@@ -16,6 +17,7 @@ import com.fulora.app.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
+    private lateinit var viewModel: HomeViewModel
 
     /**
      * Called when the Fragment is ready to display content to the screen.
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
         val application = requireNotNull(this.activity).application
+        viewModel = Injector.provideHomeViewModel(requireContext())
 
         // I created this instance of the ViewModel Factory.
 //        val dataSource = FuloraDatabase.getInstance(application).fuloraDatabaseDao

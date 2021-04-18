@@ -26,5 +26,5 @@ interface PlantDao {
     fun getAllPlants(plantingAreaId: Int): Flow<List<Plant>>
 
     @Query("SELECT * FROM plant WHERE id = :id")
-    suspend fun getPlantById(id: Int): Plant
+    suspend fun getPlantById(id: Int): Plant?
 }
