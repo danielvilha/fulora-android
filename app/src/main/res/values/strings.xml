@@ -10,5 +10,6 @@
     <string name="onboarding_step_two_subtitle">Adicione à sua lista e saiba mais sobre as caracteristicas de cada uma</string>
     <string name="onboarding_step_three_title">Seja avisado de todos os cuidados</string>
     <string name="onboarding_step_three_subtitle">É só cadastrar o melhor horário para ser sempre lembrado</string>
-
+    <string name="voltar">Voltar</string>
+    <string name="comecar">Começar</string>
 </resources>

@@ -2,11 +2,12 @@ package com.fulora.app.onboarding
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.viewpager2.widget.ViewPager2
 import com.fulora.app.R
 import com.fulora.app.databinding.ActivityOnboardingBinding
 import com.fulora.app.onboarding.adapter.OnboardingViewPagerAdapter
@@ -24,8 +25,27 @@ class OnboardingActivity : AppCompatActivity() {
         initView()
     }
 
-    fun initView() {
-        binding.viewpager.adapter = adapter
+    private fun initView() {
+        initViewPager()
+        binding.buttonBack.setOnClickListener {
+            if (binding.buttonBack.text == getString(R.string.pular)) {
+                goToLogin()
+            } else {
+                binding.viewpager.currentItem = binding.viewpager.currentItem - 1
+            }
+        }
+
+        binding.buttonNext.setOnClickListener {
+            if (binding.buttonNext.text == getString(R.string.comecar)) {
+                goToLogin()
+            } else {
+                binding.viewpager.currentItem = binding.viewpager.currentItem + 1
+            }
+        }
+    }
+
+    private fun goToLogin() {
+        //TODO: fazer o login
     }
 
     companion object {
@@ -33,7 +53,30 @@ class OnboardingActivity : AppCompatActivity() {
             return Intent(context, OnboardingActivity::class.java)
         }
     }
+
+    private fun initViewPager() {
+        binding.viewpager.adapter = adapter
+        binding.indicator.setViewPager(binding.viewpager)
+        binding.viewpager.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                when (OnboardingSteps.values()[position]) {
+                    OnboardingSteps.ONBOARDING_STEP_ONE -> {
+                        binding.buttonBack.text = getString(R.string.pular)
+                    }
+                    OnboardingSteps.ONBOARDING_STEP_THREE -> {
+                        binding.buttonNext.text = getString(R.string.comecar)
+                    }
+                    else -> {
+                        binding.buttonBack.text = getString(R.string.voltar)
+                        binding.buttonNext.text = getString(R.string.proximo)
+                    }
+                }
+            }
+        })
+    }
 }
+
 
 enum class OnboardingSteps(
     @DrawableRes val image: Int,
