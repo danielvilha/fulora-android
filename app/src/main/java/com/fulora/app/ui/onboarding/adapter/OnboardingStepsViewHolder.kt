@@ -1,10 +1,9 @@
-package com.fulora.app.onboarding.adapter
+package com.fulora.app.ui.onboarding.adapter
 
-import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.fulora.app.databinding.ItemOnboardingBinding
-import com.fulora.app.onboarding.OnboardingSteps
+import com.fulora.app.ui.onboarding.enums.OnboardingSteps
 
 class OnboardingStepsViewHolder(val binding: ItemOnboardingBinding) :
     RecyclerView.ViewHolder(binding.root) {

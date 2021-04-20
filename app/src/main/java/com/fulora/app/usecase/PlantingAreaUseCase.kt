@@ -1,4 +1,4 @@
-package com.fulora.app.home.use_case
+package com.fulora.app.usecase
 
 import com.fulora.app.repositories.PlantingAreaRepository
 

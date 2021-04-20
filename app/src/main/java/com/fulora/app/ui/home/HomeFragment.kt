@@ -1,4 +1,4 @@
-package com.fulora.app.home.ui
+package com.fulora.app.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import com.fulora.app.di.Injector
  */
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
 
     /**

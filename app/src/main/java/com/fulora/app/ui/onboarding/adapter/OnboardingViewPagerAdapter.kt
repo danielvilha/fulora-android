@@ -1,4 +1,4 @@
-package com.fulora.app.onboarding.adapter
+package com.fulora.app.ui.onboarding.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fulora.app.R
 import com.fulora.app.databinding.ItemOnboardingBinding
-import com.fulora.app.onboarding.OnboardingSteps
+import com.fulora.app.ui.onboarding.enums.OnboardingSteps
 
 class OnboardingViewPagerAdapter(val steps: Array<OnboardingSteps>) :
     RecyclerView.Adapter<OnboardingStepsViewHolder>() {

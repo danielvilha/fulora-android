@@ -1,24 +1,15 @@
-package com.fulora.app.create_account
+package com.fulora.app.ui.offline.create_account
 
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.TextUtils
-import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.fulora.app.R
 import com.fulora.app.databinding.FragmentCreateAccountBinding
 import com.fulora.app.isValidEmail
 import com.fulora.app.isValidPassword
-import com.google.android.material.snackbar.Snackbar
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 /**
  * A [Fragment] subclass.
