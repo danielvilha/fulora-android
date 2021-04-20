@@ -38,4 +38,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_logged">LoggedActivity</string>
     <string name="user_or_password_invalid">Usuário ou senha inválidos</string>
+    <string name="requisition_not_created">Requisição não criada</string>
 </resources>

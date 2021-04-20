@@ -125,7 +125,7 @@
                     app:layout_constraintTop_toBottomOf="@id/button_access_account" />
 
                 <LinearLayout
-                    android:id="@+id/button_create_account_facebook"
+                    android:id="@+id/button_access_account_facebook"
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                     android:foregroundGravity="center"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    app:layout_constraintEnd_toStartOf="@+id/button_create_account_google"
+                    app:layout_constraintEnd_toStartOf="@+id/button_access_account_google"
                     app:layout_constraintStart_toStartOf="@+id/input_email"
                     app:layout_constraintTop_toBottomOf="@+id/text_more_options">
 
@@ -155,7 +155,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/button_create_account_google"
+                    android:id="@+id/button_access_account_google"
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -166,8 +166,8 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="@+id/input_email"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button_create_account_facebook"
-                    app:layout_constraintTop_toTopOf="@+id/button_create_account_facebook">
+                    app:layout_constraintStart_toEndOf="@+id/button_access_account_facebook"
+                    app:layout_constraintTop_toTopOf="@+id/button_access_account_facebook">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -192,9 +192,9 @@
                     android:text="@string/text_create_account"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
-                    app:layout_constraintEnd_toEndOf="@id/button_create_account_google"
-                    app:layout_constraintStart_toStartOf="@id/button_create_account_facebook"
-                    app:layout_constraintTop_toBottomOf="@id/button_create_account_facebook" />
+                    app:layout_constraintEnd_toEndOf="@id/button_access_account_google"
+                    app:layout_constraintStart_toStartOf="@id/button_access_account_facebook"
+                    app:layout_constraintTop_toBottomOf="@id/button_access_account_google" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

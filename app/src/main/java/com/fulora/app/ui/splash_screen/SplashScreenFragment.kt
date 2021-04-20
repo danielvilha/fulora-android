@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fulora.app.R
 import com.fulora.app.databinding.FragmentSplashScreenBinding
@@ -33,6 +33,8 @@ class SplashScreenFragment : Fragment() {
     ): View {
         // Get a reference to the binding object and inflate the fragment views.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_splash_screen, container, false)
+
+        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         // Get a reference to the ViewModel associated with this fragment.
         viewModel = Injector.providerSplashScreenViewModel(this)

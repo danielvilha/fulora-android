@@ -17,9 +17,8 @@ class SplashScreenViewModel(var fragment: SplashScreenFragment): ViewModel()  {
         get() = _showScreen
 
     init {
-        val sharedPreferences: SharedPreferences = fragment.requireContext().getSharedPreferences("USER",
-            Context.MODE_PRIVATE
-        )
+        val sharedPreferences: SharedPreferences = fragment.requireContext()
+            .getSharedPreferences("FuloraSharedPref", Context.MODE_PRIVATE)
 
         _showScreen.value = !sharedPreferences.getString("USER_UID", "").isNullOrBlank()
     }

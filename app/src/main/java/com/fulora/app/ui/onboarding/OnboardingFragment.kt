@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.fulora.app.R
@@ -28,6 +29,8 @@ class OnboardingFragment : Fragment() {
     ): View {
         // Get a reference to the binding object and inflate the fragment views.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_onboarding, container, false)
+
+        (activity as AppCompatActivity).supportActionBar!!.hide()
 
         viewModel = Injector.provideOnboardingViewModel(this)
 

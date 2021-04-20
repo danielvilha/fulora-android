@@ -8,6 +8,9 @@ import com.fulora.app.repositories.PlantRepository
 import com.fulora.app.repositories.PlantingAreaRepository
 import com.fulora.app.repositories.UserRepository
 import com.fulora.app.source.local.FuloraDatabase
+import com.fulora.app.ui.offline.create_account.CreateAccountFragment
+import com.fulora.app.ui.offline.create_account.CreateAccountViewModel
+import com.fulora.app.ui.offline.create_account.CreateAccountViewModelFactory
 import com.fulora.app.ui.offline.sign_in.SignInFragment
 import com.fulora.app.ui.offline.sign_in.SignInViewModel
 import com.fulora.app.ui.offline.sign_in.SignInViewModelFactory
@@ -53,5 +56,9 @@ object Injector {
 
     fun provideSignInViewModel(fragment: SignInFragment): SignInViewModel {
         return SignInViewModelFactory(fragment).create(SignInViewModel::class.java)
+    }
+
+    fun provideCreateAccountViewModel(fragment: CreateAccountFragment): CreateAccountViewModel {
+        return CreateAccountViewModelFactory(fragment).create(CreateAccountViewModel::class.java)
     }
 }

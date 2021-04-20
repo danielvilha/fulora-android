@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.fulora.app.R
@@ -30,6 +31,8 @@ class HomeFragment : Fragment() {
     ): View {
         // Get a reference to the binding object and inflate the fragment views.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+
+        (activity as AppCompatActivity).supportActionBar!!.show()
 
         val application = requireNotNull(this.activity).application
         viewModel = Injector.provideHomeViewModel(requireContext())

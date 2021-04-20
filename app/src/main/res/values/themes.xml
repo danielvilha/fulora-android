@@ -22,4 +22,11 @@
     <style name="Theme.Fulora.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Fulora.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FloatingButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/salem</item>
+        <item name="icon">@drawable/ic_add</item>
+        <item name="tint">@color/white</item>
+    </style>
+
 </resources>
