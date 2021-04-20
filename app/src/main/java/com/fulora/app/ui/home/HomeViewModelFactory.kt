@@ -1,9 +1,8 @@
-package com.fulora.app.home.ui
+package com.fulora.app.ui.home
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.fulora.app.source.local.dao.PlantDao
+import com.fulora.app.usecase.PlantingAreaUseCase
 
 /**
  * Created by danielvilha on 17/04/21
@@ -15,12 +14,11 @@ import com.fulora.app.source.local.dao.PlantDao
  */
 @Suppress("UNCHECKED_CAST")
 class HomeViewModelFactory(
-    private val dataSource: PlantDao,
-    private val application: Application
+    private val plantingUseCase: PlantingAreaUseCase
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            return HomeViewModel(dataSource, application) as T
+            return HomeViewModel(plantingUseCase) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

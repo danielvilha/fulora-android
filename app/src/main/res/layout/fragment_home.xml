@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.fulora.app.home.ui.HomeViewModel" />
+            type="com.fulora.app.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.ui.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
@@ -26,11 +26,13 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
+            style="@style/FloatingButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:clickable="true"
+            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_input_add" />

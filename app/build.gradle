@@ -2,7 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs'
+    id "androidx.navigation.safeargs.kotlin"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -42,10 +43,19 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin"
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin_stdlib"
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
 
     // Support libraries
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$version_navigation_features"
 
     // Android KTX
     implementation "androidx.core:core-ktx:$version_core"
@@ -53,15 +63,37 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$version_room"
     implementation "androidx.room:room-runtime:$version_room"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$version_room"
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
 
     // AppCompact
     implementation "androidx.appcompat:appcompat:$version_appcompact"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle"
 
     // Material
     implementation "com.google.android.material:material:$version_material"
     implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation_fragment"
     implementation "androidx.navigation:navigation-ui-ktx:$version_navigation_ui"
+
+    // Intuit
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // Viewpager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine_android"
+
+    // Navigation
+    implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+
 
     // Test
     testImplementation 'junit:junit:4.13.2'
