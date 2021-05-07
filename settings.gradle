@@ -1,2 +1,5 @@
+include ':online'
+include ':preference'
+include ':offline'
 include ':app'
 rootProject.name = "Fulora"

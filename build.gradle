@@ -1,35 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext {
-        version_google = "4.3.5"
-        version_core = "1.3.2"
-        version_coroutine = "1.4.1"
-        version_coroutine_android = "1.4.3"
-        version_constraint_layout = "2.0.4"
-        version_gradle = '4.1.3'
-        version_kotlin = "1.4.32"
-        version_kotlin_stdlib = "1.4.32"
-        version_lifecycle_extensions = "2.2.0"
-        version_lifecycle = "2.3.1"
-        version_navigation = '1.0.0'
-        version_room = "2.2.6"
-        version_appcompact = "1.2.0"
-        version_material = "1.3.0"
-        version_legacy_support = "1.0.0"
-        version_navigation_fragment = "2.3.5"
-        version_navigation_ui = "2.3.5"
-        version_navigation_features = "2.3.5"
-    }
+    ext.kotlin_version = '1.5.0'
     repositories {
         google()
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath "com.google.gms:google-services:$version_google"
-        classpath "com.android.tools.build:gradle:$version_gradle"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
-        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath "com.google.gms:google-services:4.3.5"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="persian_green">#009688</color>
-    <color name="pine_green">#00796B</color>
+    <color name="persian">#009688</color>
+    <color name="pine">#00796B</color>
     <color name="salem">#FF0F8352</color>
     <color name="panache">#FFEBF6EE</color>
+    <color name="scorpion">#595959</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black_overlay">#66000000</color>
 </resources>
